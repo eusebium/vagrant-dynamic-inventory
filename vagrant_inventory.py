@@ -352,6 +352,7 @@ def main():
         # if the cache is older than 1 hours then remove it
         if mtime < cache_time:
             shutil.rmtree(cache_path, ignore_errors=True)
+            os.makedirs(cache_path)
 
     if args.list:
         hosts_cache_path = os.path.join(cache_path, 'hosts')
